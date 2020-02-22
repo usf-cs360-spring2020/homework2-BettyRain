@@ -1,5 +1,5 @@
 // location of data file
-let csv = 'fulldata.csv';
+let csv = 'data.csv';
 
 // function to convert into date
 // try: parseRowDate('197912');
