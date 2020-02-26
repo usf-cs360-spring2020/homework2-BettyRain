@@ -18,12 +18,10 @@ function drawParallelCoord(data) {
   svg.attr('width', config.svg.width);
   svg.attr('height', config.svg.height + config.margin.bottom);
 
-
   dimensions = ["par_mean", "k_mean", "female", "ktop1pc_cond_parq1", "ktop1pc_cond_parq5"];
   let color = d3.scaleOrdinal()
     .domain(["1", "2", "3"])
     .range(["#111f9e", "#23bd16", "#eb0d0d"]);
-
 
   let yAxis = {}
   for (i in dimensions) {
