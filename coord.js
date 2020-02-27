@@ -7,7 +7,7 @@ function drawParallelCoord(data) {
   };
 
   config.svg.height = 470;
-  config.svg.width = 950;
+  config.svg.width = 1000;
 
   config.margin.top = 20;
   config.margin.right = 10;
@@ -27,12 +27,14 @@ function drawParallelCoord(data) {
   for (i in dimensions) {
     name = dimensions[i]
     yAxis[name] = d3.scaleLinear()
-      .domain(d3.extent(data, function(d) { return +d[name];  }))
+      .domain(d3.extent(data, function(d) {
+        return +d[name];
+      }))
       .range([config.svg.height, config.margin.top])
   }
 
   let xAxis = d3.scalePoint()
-    .range([0, config.svg.width])
+    .range([10, config.svg.width - 130])
     .padding(0.25)
     .domain(dimensions);
 
@@ -70,12 +72,69 @@ function drawParallelCoord(data) {
     })
 
     .append("text")
-      .style("text-anchor", "middle")
-      .attr("y", -1)
-      .text(function(d) {return d;});
+    .style("text-anchor", "middle")
+    .attr("y", -1)
+    .text(function(d) {
+      return d;
+    });
 
-    // helper method to make translating easier
-    function translate(x, y) {
-      return 'translate(' + x + ',' + y + ')';
-    }
+
+    //add legend
+  svg.append("text")
+    .attr("class", "text")
+    .attr("x", config.svg.width - 145)
+    .attr("y", config.svg.height - 95)
+    .text("Four-year or")
+    .attr("alignment-baseline", "middle")
+
+    svg.append("text")
+      .attr("class", "text")
+      .attr("x", config.svg.width - 155)
+      .attr("y", config.svg.height - 80)
+      .text("two-year college")
+      .attr("alignment-baseline", "middle")
+
+    //add color circles
+  svg.append("circle")
+    .attr("cx", config.svg.width - 140)
+    .attr("cy", config.svg.height - 60)
+    .attr("r", 5)
+    .style("fill", "#111f9e")
+  svg.append("circle")
+    .attr("cx", config.svg.width - 140)
+    .attr("cy", config.svg.height - 40)
+    .attr("r", 5)
+    .style("fill", "#23bd16")
+  svg.append("circle")
+    .attr("cx", config.svg.width - 140)
+    .attr("cy", config.svg.height - 20)
+    .attr("r", 5)
+    .style("fill", "#eb0d0d")
+
+    //add text
+  svg.append("text")
+    .attr("class", "legend-text")
+    .attr("x", config.svg.width - 130)
+    .attr("y", config.svg.height - 60)
+    .text("Four year")
+    .attr("alignment-baseline", "middle")
+  svg
+    .append("text")
+    .attr("class", "legend-text")
+    .attr("x", config.svg.width - 130)
+    .attr("y", config.svg.height - 40)
+    .text("Two year")
+    .attr("alignment-baseline", "middle")
+  svg
+    .append("text")
+    .attr("class", "legend-text")
+    .attr("x", config.svg.width - 130)
+    .attr("y", config.svg.height - 20)
+    .text("< Two year")
+    .attr("alignment-baseline", "middle")
+
+  // helper method to make translating easier
+  function translate(x, y) {
+    return 'translate(' + x + ',' + y + ')';
+  }
 }

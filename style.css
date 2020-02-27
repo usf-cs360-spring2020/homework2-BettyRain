@@ -44,6 +44,12 @@ textarea {
   background-color: white;
 }
 
+text{
+  font-family: 'Sans-Serif', sans-serif;
+  font-size: 8pt;
+  color: black;
+}
+
 #coord {
   width: 950px;
   height: 500px;

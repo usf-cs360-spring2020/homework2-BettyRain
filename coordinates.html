@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="./style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="coord.js"></script>
 
@@ -33,6 +33,10 @@
           <span class="icon"><i class="fas fa-home"></i></span>
           <span>Home</span>
         </a>
+        <a class="navbar-item" href="data.html">
+          <span class="icon"><i class="fas fa-table"></i></span>
+          <span>Data</span>
+        </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
           <span aria-hidden="true"></span>
@@ -49,14 +53,6 @@
             <span>Parallel Coordinates</span>
           </a>
         </div>
-
-        <!-- Right navbar items -->
-        <div class="navbar-end">
-          <a class="navbar-item" href="#about" title="About">
-            <span class="icon"><i class="fas fa-info-circle"></i></span>
-            <span>About</span>
-          </a>
-        </div>
       </div>
     </div>
   </nav>
@@ -71,19 +67,14 @@
         <p class="subtitle">
           Purpose
         </p>
-        <p>The purpose of this visualization
+        <p>The purpose of this visualization to understand trends in income dependencies with low and high income families for groups with >10% of females grouping by education level.
 
           <h3 id="wrangling">Wrangling</h3>
 
-          <p>The data was sorted by icregion to show the least color on the top, also the data was filtered to delete all female data less than 0.1. This was made with purposes of concentrating on women data.
-
+          <p>The data was sorted by icregion to show the most rare color on the top, also the data was filtered to delete all female data less than 0,1. This was made with purposes of concentrating on female data.
 
             <h3 id="prototype_tab">Tableau Prototype</h3>
 
-            <!--<img src="barchart.jpg" alt="BarChart Prototype">
-
-            <p>Prototype was done using Tableau. The data used: "Passenger Number" (sum for each GEO Region group) (as y scale) and "GEO Region" (as x scale).
--->
             <svg id="prototype" width="950" height="500" xmlns="http://www.w3.org/2000/svg">
               <g width="950" height="500" style="font-size: 10px; font-family: Arial, Helvetica;">
                 <g transform="translate(40, 30)">
@@ -2561,62 +2552,21 @@
 
             <p><img src="caption.jpg"></p>
 
+            <p>Prototype was done using <a href="http://app.rawgraphs.io/">RAWGraphs</a></p>
 
             <h3 id="visualizations">Visualization</h3>
-            <h5>Transit Countries Bar chart</h5>
-            <!--<svg id="coord-chart"></svg>-->
             <script type="text/javascript">
               d3.csv("data.csv").then(drawParallelCoord);
             </script>
-            <svg id="coord" width="600" height="750"></svg>
+            <svg id="coord" width="1000" height="1000"></svg>
             <pre> Data acquired from "Mobility Report Cards: The Role of Colleges in Intergenerational Mobility" from <a href="https://opportunityinsights.org/paper/mobilityreportcards/">https://opportunityinsights.org/</a>.
               <small>Elizaveta Ozerova</small></pre>
 
-            <!--  <p> The JavaScript code for this visualization can be found <a href="https://github.com/usf-cs360-spring2020/homework1-BettyRain/blob/gh-pages/codeBarChart.html">here</a>.
--->
+            <p> The JavaScript code for this visualization can be found <a href="https://github.com/usf-cs360-spring2020/homework2-BettyRain/blob/gh-pages/coord.js">here</a>.
             <div id="vis"></div>
 
             <h3 id="analysis">Analysis</h3>
-            <p>Passenger count is encoded by the length of the bar, so longer bars represent higher passenger count. GEO region is encoded by the bar position, so each bar is responsible for a particular region.
-
-              <h2 id="about">About</h2>
-
-              <!-- Profile box -->
-              <!-- https://bulma.io/documentation/layout/media-object/ -->
-              <article class="media">
-                <figure class="media-left">
-                  <p class="image is-128x128"><img class="is-rounded" src="profile.png"></p>
-                </figure>
-
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>Betty</strong><br />
-                      CS Major, <a href="https://www.usfca.edu/">University of San Francisco</a><br />
-                      <em>Expected Graduation: May 2020</em><br />
-                      <i class="fas fa-envelope"></i> <a href="mailto:eozerova@dons.usfca.edu">eozerova@dons.usfca.edu</a>
-                    </p>
-
-                    <p>
-                      Computer Science student, enthusiast and explorer. Cinematography geek, learning to do everything CS related from editing to visual effects. Love working with hardware, especially motorcycles.
-                    </p>
-
-                    <!-- https://bulma.io/documentation/elements/tag/ -->
-                    <div class="heading">Skills</div>
-
-                    <div class="tags">
-                      <span class="button is-primary is-outlined is-small is-rounded">Java</span>
-                      <span class="button is-primary is-outlined is-small is-rounded">Go</span>
-                      <span class="button is-primary is-outlined is-small is-rounded">Python</span>
-                      <span class="button is-primary is-outlined is-small is-rounded">JavaScript</span>
-                      <span class="button is-primary is-outlined is-small is-rounded">HTML</span>
-                      <span class="button is-primary is-outlined is-small is-rounded">CSS</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <!-- End profile box -->
-
+            <p>Coming soon
       </div>
       <!-- End page content -->
     </div>
