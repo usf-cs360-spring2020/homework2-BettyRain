@@ -71,7 +71,8 @@
 
           <h3 id="wrangling">Wrangling</h3>
 
-          <p>The data was sorted by icregion to show the most rare color on the top, also the data was filtered to delete all female data less than 0,1. This was made with purposes of concentrating on female data.
+          <p>The data was sorted by icregion to show the most rare color on the top, also the data was filtered to delete all female data less than 10%. This was made with purposes of concentrating on female data.
+            The dataset used for this visualization can be found <a href="https://github.com/usf-cs360-spring2020/homework2-BettyRain/blob/gh-pages/data.csv">here</a>.
 
             <h3 id="prototype_tab">Tableau Prototype</h3>
 
@@ -2563,10 +2564,21 @@
               <small>Elizaveta Ozerova</small></pre>
 
             <p> The JavaScript code for this visualization can be found <a href="https://github.com/usf-cs360-spring2020/homework2-BettyRain/blob/gh-pages/coord.js">here</a>.
-            <div id="vis"></div>
+              <div id="vis"></div>
 
-            <h3 id="analysis">Analysis</h3>
-            <p>Coming soon
+              <h3 id="analysis">Analysis</h3>
+              <p>The x-axes on this graph are represented with: mean parental income (par_mean), mean kid income (k_mean), fraction female among kids (female),
+                probability of kid in top 1% conditional on parent in quintile 1 (ktop1pc_cond_parq1) and probability of kid in top 1% conditional on parent in quintile 5 (ktop1pc_cond_parq5).
+                The color is represented with iclevel.
+                From the first two columns (par_mean and k_mean) we can see that there is a strong correlation between parents who have a low income and kids with low income. It appears that if the parent has a low income it's likely that the child
+                will have a low income as well.
+                It also shows in the color scale that children with less than 2 years of college will have even lower income than their parents.</br>
+                From the overall visualization we can see some trends.</br>
+                In low income families, females mostly go to less than 2 years or 2 year colleges. Following the trend, females with two year college or less have low probability to be in a high income independent of their parents quintile. A lot of females from poor families have less
+                than 2 years education and they stay in a low income category.</br>
+                In the group where the female fraction is 100% the females mostly go to 4 year college, although the probability for females to be on the top 1% of income is very low despite their education or parents income. They do have a higher probability of moving to the higher income if they have a four year college
+
+
       </div>
       <!-- End page content -->
     </div>
