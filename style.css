@@ -1,24 +1,14 @@
-/*
- * we use css to style our page and our svg elements
- * the classes/ids defined here must match our d3 code
- */
-
 body, textarea {
   font-family: 'Sans-Serif', sans-serif;
   font-weight: 300;
-/*  font-size: 10pt;*/
 }
 
 body {
   margin: 5px;
   padding: 0px;
-
-  /* see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value */
-/*  background-color: whitesmoke;*/
 }
 
 textarea {
-  /* position the textarea on top of the svg */
   font-family: 'Sans-Serif', sans-serif;
   position: fixed;
   top: 5px;
@@ -30,7 +20,6 @@ textarea {
   width: 400px;
   height: 75px;
 
-  /* try changing this color in blockbuilder! */
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -56,9 +45,6 @@ text{
 
   background-color: white;
 }
-
-
-/* svg elements are styled differently from html elements */
 
 #x-axis text,
 #y-axis text {
